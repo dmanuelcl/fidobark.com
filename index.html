@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            /* Añadido */
+        }
+
+        #myVideo {
+            position: absolute;
+            /* Cambiado a posición absoluta */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            /* Cambiado a ancho y alto de la ventana gráfica */
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .messenger-link {
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .messenger-link:hover {
+            background: #ddd;
+            color: black;
+        }
+    </style>
+
+<!-- 
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "216899948171043");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script> -->
+
+    <!-- Your SDK code -->
+    <!-- <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v18.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script> -->
+</head>
+
+<body>
+
+    <video autoplay playsinline muted loop id="myVideo">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="content">
+        <h1>FidoBark</h1>
+        <p>We have designs for all states.</p>
+        <p>We are working to have the page ready very soon, but you can write to us and we will gladly create your
+            personalized Tag</p>
+
+    </div>
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+</body>
+
+</html>
